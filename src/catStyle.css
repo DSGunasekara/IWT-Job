@@ -78,6 +78,17 @@
     width: 50%;
   }
 
+  .column.side p {
+    float: right;
+    font-weight: 1000;
+    opacity: 0.6;
+  }
+
+  .column.side p:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+
   
   .row:after {
     content: "";
