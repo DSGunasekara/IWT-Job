@@ -143,14 +143,14 @@
   }
 
   .row select {
-    background-color: #d3d3d3;
+    background-color: #ebe9e9;
     padding: 5px;
     border-radius: 5px;
   }
 
   .row select option {
     border-radius: 5px;
-    background-color: #d3d3d3;
+    background-color: #ebe9e9;
   }
   
   .job-post {
