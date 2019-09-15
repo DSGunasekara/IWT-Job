@@ -37,6 +37,36 @@
 
         <div class="column side">
 
+            <h2>Filter your search </h2>
+            <p onclick="hideNav()" title="Hide the filter">V</p><br><br>
+            <form id="hide-fil">
+
+                Job Type:
+
+                <select>
+                    <option value="se">Software Engineer</option>
+                    <option value="na">Network Admin</option>
+                    <option value="cs">Cyber Security</option>
+                    <option value="eng">Full Stack Web Developer</option>
+                </select>
+
+                <div class="salary-slider">
+                    <br>
+                    Salary Range: <span id="salary"></span>
+                    <br>
+                    <input type="range" min="35000" max="200000" value="100000" class="slider" id="salaryRange">
+                </div>
+                <br>
+                <input type="checkbox">Goverment Jobs <br>
+                <input type="checkbox">Walk-in interview <br>
+                <input type="checkbox">NGO Jobs <br>
+                <input type="checkbox">Full-time <br>
+                <input type="checkbox">Part-time <br>
+                <input type="checkbox">Work from home <br>
+                <input type="checkbox">Internship <br>
+                <button class="filter" onclick="window.location.href='#filter'">Filter</button>
+
+            </form>
         </div>
 
         <div class="column middle">
