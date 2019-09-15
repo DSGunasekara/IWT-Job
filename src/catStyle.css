@@ -208,6 +208,7 @@
     width: 50%;
     margin: 0 auto;
     padding-bottom: 20px;
+    padding-left: 20px;
     float: left;
   }
 
@@ -215,7 +216,7 @@
     opacity: 0.5;
     display: block;
     width: 100%;
-    height: auto;
+    height: 150px;
     transition: .5s ease;
     backface-visibility: hidden;
     border-radius: 5px;
@@ -343,5 +344,10 @@
   @media screen and (max-width: 600px){
     .cat {
       width: 100%;
+      padding-left: 0;
+    }
+
+    .cat-img {
+      height: auto;
     }
   }
