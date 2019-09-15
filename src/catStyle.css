@@ -203,9 +203,14 @@
     opacity: 1;
   }
 
-.cat{
-  background-color:#fdfbfb;
-}
+  .cat-img {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
 
   #description {
     background-color: #fdfbfb;
