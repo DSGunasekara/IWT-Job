@@ -206,6 +206,8 @@
   .cat {
     position: relative;
     width: 50%;
+    margin: 0 auto;
+    padding-bottom: 20px;
   }
 
   .cat-img {
@@ -335,4 +337,10 @@
       text-align: left;
     }
     
+  }
+
+  @media screen and (max-width: 600px){
+    .cat {
+      width: 100%;
+    }
   }
