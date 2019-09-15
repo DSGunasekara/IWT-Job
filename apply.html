@@ -49,10 +49,7 @@
 
                     <hr>
 
-                    <!-- <input type="file" id="real-file" hidden="hidden" />
-                    <button type="button" id="custom-button" onclick="loadData()">Chose Logo</button>
-                    <span id="custom-text">No file chose</span>
-                    <br> -->
+
                     <h3>Personal Informations</h3>
                     <input type="text" placeholder="First Name*" name="firstName" required>
                     <input type="text" placeholder="Last Name*" name="lasttName" required>
@@ -75,6 +72,20 @@
                         <option value="pro">Professional</option>
                         <option value="other">Other</option>
                     </select>
+
+                    <input type="text" placeholder="Degree/Certificate Awareded*" name="degree" required>
+                    <input type="text" placeholder="University/Institute*" name="uni" required>
+                    <input type="text" placeholder="Graduated year*" name="year" required>
+                    <hr>
+                    <h3>Work Experience</h3>
+                    <input type="text" placeholder="Current Designation*" name="designation" required>
+                    <input type="text" placeholder="Company Name" name="company-name" required>
+                    <input type="text" placeholder="Work Duration" name="work duration" required>
+
+                    <input type="file" id="real-file" hidden="hidden" />
+                    <button type="button" id="custom-button" onclick="loadData()">Upload CV</button>
+                    <span id="custom-text">No file chose</span>
+                    <br>
 
                     <button type="Submit" class="registerbtn">Apply</button>
 
