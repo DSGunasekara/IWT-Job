@@ -45,7 +45,7 @@
 
                 <div class="container">
 
-                    <h2>Location: Colombo</h2>
+                    <h3>Location: Colombo</h3>
 
                     <hr>
 
@@ -53,13 +53,30 @@
                     <button type="button" id="custom-button" onclick="loadData()">Chose Logo</button>
                     <span id="custom-text">No file chose</span>
                     <br> -->
-                    <input type="text" placeholder="First Name" name="firstName" required>
-                    <input type="text" placeholder="Last Name" name="lasttName" required>
-                    <input type="text" placeholder="Email Address" name="email" required>
-                    <input type="text" id="phoneNo" placeholder="Phone Number" name="phoneNUmber" required>
-                    <input type="text" placeholder="Address" name="address" required>
-                    <input type="text" id="repasswd" placeholder="Repeat Password" name="psw-repeat" required>
-                    <button type="Submit" class="registerbtn">REGISTER</button>
+                    <h3>Personal Informations</h3>
+                    <input type="text" placeholder="First Name*" name="firstName" required>
+                    <input type="text" placeholder="Last Name*" name="lasttName" required>
+                    <input type="text" placeholder="Email Address*" name="email" required>
+                    <input type="text" id="phoneNo" placeholder="Phone Number*" name="phoneNUmber" required>
+                    <input type="text" placeholder="Address*" name="address" required>
+                    <input type="text" placeholder="LinkedIn/Blog" name="blog">
+                    <input type="text" placeholder="GitHub" name="github">
+
+                    <hr>
+
+                    <h3>Educational Qualifications</h3>
+
+                    <select name="edu-qualify" id="qualifications" style="width: 100%">
+                        <option value="default">Type of Qualification*</option>
+                        <option value="dip">Diploma</option>
+                        <option value="bsc">Bachelors</option>
+                        <option value="msc">Masters</option>
+                        <option value="phd">PHD</option>
+                        <option value="pro">Professional</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <button type="Submit" class="registerbtn">Apply</button>
 
                     <hr>
                 </div>
