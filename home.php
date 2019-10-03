@@ -290,7 +290,7 @@ include_once './php/dbcon.php'
 
       <h2><a href="applicants.html">Top Applicants</a></h2>
 
-      <div class="job-post">
+      <div class="app-post">
 
       <?php
         $countSql = "SELECT * FROM job_seekers;";
@@ -343,7 +343,7 @@ include_once './php/dbcon.php'
 
       </div>
 
-      <div class="job-post">
+      <div class="app-post">
 
       <?php
         $sql = "SELECT * FROM job_seekers where job_seeker_id = $count;";
@@ -393,7 +393,7 @@ include_once './php/dbcon.php'
 
       </div>
 
-      <div class="job-post">
+      <div class="app-post">
 
       <?php
         $sql = "SELECT * FROM job_seekers where job_seeker_id = $count;";
