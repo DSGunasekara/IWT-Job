@@ -1,3 +1,6 @@
+<?php
+include_once './php/dbcon.php'
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -69,11 +72,32 @@
     </div>
 
     <div class="column middle">
+
       <h2> <a href="jobs.html"> Top Jobs</h2></a>
 
       <div class="job-post">
+      <?php
+        $countSql = "SELECT * FROM job;";
+        $countResult =  mysqli_query($conn, $countSql);
+        $count = mysqli_num_rows($countResult);
 
-        <h2>Software Engineer</h2>
+        $sql = "SELECT * FROM job where job_id = $count;";
+        $result = mysqli_query($conn, $sql);
+        $resultCheck = mysqli_num_rows($result);
+        $count = $count -1;
+        
+
+        if ($resultCheck > 0) {
+          while ($row = mysqli_fetch_assoc($result)) {
+            $job_name = $row['job_name'];
+            $company_name = $row['company_name'];
+            $job_type = $row['job_type'];
+            $location = $row['location'];
+          }
+        }
+
+      ?>
+        <h2><?php echo $job_name?></h2>
 
         <table style="width:100%">
           <tr>
@@ -83,15 +107,15 @@
           </tr>
           <tr>
             <th>Company:</th>
-            <td>WSO2</td>
+            <td><?php echo $company_name?></td>
           </tr>
           <tr>
             <th>Job Type:</th>
-            <td>Full Time</td>
+            <td><?php echo $job_type?></td>
           </tr>
           <tr>
             <th>Location:</th>
-            <td>Colombo</td>
+            <td><?php echo $location?></td>
           </tr>
           <tr>
             <th>Date:</th>
@@ -110,29 +134,45 @@
 
       <div class="job-post">
 
-        <h2>Network Administrator</h2>
+        <?php
+        $sql = "SELECT * FROM job where job_id = $count;";
+        $result = mysqli_query($conn, $sql);
+        $resultCheck = mysqli_num_rows($result);
+        $count = $count -1;
+
+        if ($resultCheck > 0) {
+          while ($row = mysqli_fetch_assoc($result)) {
+            $job_name = $row['job_name'];
+            $company_name = $row['company_name'];
+            $job_type = $row['job_type'];
+            $location = $row['location'];
+          }
+        }
+
+      ?>
+        <h2><?php echo $job_name?></h2>
 
         <table style="width:100%">
           <tr>
             <th rowspan="5">
-              <img src="src\ifs.png" alt="IFS">
+              <img src="src\99x.jpg" alt="WSO2">
             </th>
           </tr>
           <tr>
             <th>Company:</th>
-            <td>IFS</td>
+            <td><?php echo $company_name?></td>
           </tr>
           <tr>
             <th>Job Type:</th>
-            <td>Full Time</td>
+            <td><?php echo $job_type?></td>
           </tr>
           <tr>
             <th>Location:</th>
-            <td>Negombo</td>
+            <td><?php echo $location?></td>
           </tr>
           <tr>
             <th>Date:</th>
-            <td>8/3/2019</td>
+            <td>5/10/2019</td>
           </tr>
           <tr>
             <th></th>
@@ -142,34 +182,49 @@
             </td>
           </tr>
         </table><br>
-
       </div>
 
       <div class="job-post">
 
-        <h2>React Native Developer</h2>
+      <?php
+        $sql = "SELECT * FROM job where job_id = $count;";
+        $result = mysqli_query($conn, $sql);
+        $resultCheck = mysqli_num_rows($result);
+        $count = $count -1;
+
+        if ($resultCheck > 0) {
+          while ($row = mysqli_fetch_assoc($result)) {
+            $job_name = $row['job_name'];
+            $company_name = $row['company_name'];
+            $job_type = $row['job_type'];
+            $location = $row['location'];
+          }
+        }
+
+      ?>
+        <h2><?php echo $job_name?></h2>
 
         <table style="width:100%">
           <tr>
             <th rowspan="5">
-              <img src="src\99x.jpg" alt="99x">
+              <img src="src\Virtusa.jpg" alt="WSO2">
             </th>
           </tr>
           <tr>
             <th>Company:</th>
-            <td>99x Technologies</td>
+            <td><?php echo $company_name?></td>
           </tr>
           <tr>
             <th>Job Type:</th>
-            <td>Full Time</td>
+            <td><?php echo $job_type?></td>
           </tr>
           <tr>
             <th>Location:</th>
-            <td>Colombo</td>
+            <td><?php echo $location?></td>
           </tr>
           <tr>
             <th>Date:</th>
-            <td>12/6/2019</td>
+            <td>5/10/2019</td>
           </tr>
           <tr>
             <th></th>
@@ -179,34 +234,49 @@
             </td>
           </tr>
         </table><br>
-
       </div>
 
       <div class="job-post">
 
-        <h2>Internship</h2>
+        <?php
+        $sql = "SELECT * FROM job where job_id = $count;";
+        $result = mysqli_query($conn, $sql);
+        $resultCheck = mysqli_num_rows($result);
+        $count = $count -1;
+
+        if ($resultCheck > 0) {
+          while ($row = mysqli_fetch_assoc($result)) {
+            $job_name = $row['job_name'];
+            $company_name = $row['company_name'];
+            $job_type = $row['job_type'];
+            $location = $row['location'];
+          }
+        }
+
+      ?>
+        <h2><?php echo $job_name?></h2>
 
         <table style="width:100%">
           <tr>
             <th rowspan="5">
-              <img src="src\virtusa.jpg" alt="virtusa">
+              <img src="src\ifs.png" alt="WSO2">
             </th>
           </tr>
           <tr>
             <th>Company:</th>
-            <td>Virtusa</td>
+            <td><?php echo $company_name?></td>
           </tr>
           <tr>
             <th>Job Type:</th>
-            <td>Partime</td>
+            <td><?php echo $job_type?></td>
           </tr>
           <tr>
             <th>Location:</th>
-            <td>Malabe</td>
+            <td><?php echo $location?></td>
           </tr>
           <tr>
             <th>Date:</th>
-            <td>3/2/2019</td>
+            <td>5/10/2019</td>
           </tr>
           <tr>
             <th></th>
@@ -216,14 +286,33 @@
             </td>
           </tr>
         </table><br>
-
       </div>
 
       <h2><a href="applicants.html">Top Applicants</a></h2>
 
       <div class="job-post">
 
-        <h2>Software Engineer</h2>
+      <?php
+        $countSql = "SELECT * FROM job_seekers;";
+        $countResult =  mysqli_query($conn, $countSql);
+        $count = mysqli_num_rows($countResult);
+        
+        $sql = "SELECT * FROM job_seekers where job_seeker_id = $count;";
+        $result = mysqli_query($conn, $sql);
+        $resultCheck = mysqli_num_rows($result);
+        $count = $count -1;
+
+        if ($resultCheck > 0) {
+          while ($row = mysqli_fetch_assoc($result)) {
+            $name = $row['name'];
+            $experties = $row['experties'];
+            $type = $row['job_type'];
+            $experience = $row['experience'];
+          }
+        }
+      ?>
+
+        <h2><?php echo $type?></h2>
 
         <table style="width:100%">
           <tr>
@@ -233,23 +322,18 @@
           </tr>
           <tr>
             <th>Name:</th>
-            <td>A.D.S.Gunasekara</td>
+            <td><?php echo $name?></td>
           </tr>
           <tr>
             <th>Experts in:</th>
-            <td>Python</td>
-          </tr>
-          <tr>
-            <th></th>
-            <td>Java</td>
+            <td><?php echo $experties?></td>
           </tr>
           <tr>
             <th>Experienxe:</th>
-            <td>4 years</td>
+            <td><?php echo $experience?></td>
           </tr>
           <tr>
-            <th></th>
-            <th></th>
+          <th></th>
             <td>
               <a class="view-more" href="applicantPost.html">View
                 More</a>
@@ -261,7 +345,23 @@
 
       <div class="job-post">
 
-        <h2>Full Stack Web Developer</h2>
+      <?php
+        $sql = "SELECT * FROM job_seekers where job_seeker_id = $count;";
+        $result = mysqli_query($conn, $sql);
+        $resultCheck = mysqli_num_rows($result);
+        $count = $count -1;
+
+        if ($resultCheck > 0) {
+          while ($row = mysqli_fetch_assoc($result)) {
+            $name = $row['name'];
+            $experties = $row['experties'];
+            $type = $row['job_type'];
+            $experience = $row['experience'];
+          }
+        }
+      ?>
+
+        <h2><?php echo $type?></h2>
 
         <table style="width:100%">
           <tr>
@@ -271,29 +371,75 @@
           </tr>
           <tr>
             <th>Name:</th>
-            <td>A.D.S.Gunasekara</td>
+            <td><?php echo $name?></td>
           </tr>
           <tr>
             <th>Experts in:</th>
-            <td>Python</td>
-          </tr>
-          <tr>
-            <th></th>
-            <td>Java</td>
+            <td><?php echo $experties?></td>
           </tr>
           <tr>
             <th>Experienxe:</th>
-            <td>4 years</td>
+            <td><?php echo $experience?></td>
           </tr>
           <tr>
-            <th></th>
-            <th></th>
+          <th></th>
             <td>
               <a class="view-more" href="applicantPost.html">View
                 More</a>
             </td>
           </tr>
         </table><br>
+
+
+      </div>
+
+      <div class="job-post">
+
+      <?php
+        $sql = "SELECT * FROM job_seekers where job_seeker_id = $count;";
+        $result = mysqli_query($conn, $sql);
+        $resultCheck = mysqli_num_rows($result);
+        $count = $count -1;
+
+        if ($resultCheck > 0) {
+          while ($row = mysqli_fetch_assoc($result)) {
+            $name = $row['name'];
+            $experties = $row['experties'];
+            $type = $row['job_type'];
+            $experience = $row['experience'];
+          }
+        }
+      ?>
+
+        <h2><?php echo $type?></h2>
+
+        <table style="width:100%">
+          <tr>
+            <th rowspan="5">
+              <img src="src\avatar.jfif" alt="avatar">
+            </th>
+          </tr>
+          <tr>
+            <th>Name:</th>
+            <td><?php echo $name?></td>
+          </tr>
+          <tr>
+            <th>Experts in:</th>
+            <td><?php echo $experties?></td>
+          </tr>
+          <tr>
+            <th>Experienxe:</th>
+            <td><?php echo $experience?></td>
+          </tr>
+          <tr>
+          <th></th>
+            <td>
+              <a class="view-more" href="applicantPost.html">View
+                More</a>
+            </td>
+          </tr>
+        </table><br>
+
 
       </div>
 
