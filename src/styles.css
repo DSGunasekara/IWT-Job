@@ -301,6 +301,11 @@ td {
   cursor: pointer;
 }
 
+.reg {
+  background-color: yellow;
+  font-size: 50px;
+}
+
 footer {
   padding: 5px;
   text-align: center;

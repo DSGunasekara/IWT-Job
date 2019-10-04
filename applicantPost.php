@@ -48,7 +48,7 @@ if ($resultCheck > 0) {
       <a href="jobs.php">Jobs</a>
       <a href="contact.html">Contact us</a>
       <a href="about.html">About us</a>
-      <a id="signup" href="signup.html">Signup</a>
+      <!-- <a id="signup" href="signup.html">Signup</a> -->
       <a id="login" href="Thushan\Login.html">Login</a>
       <a id="profile" href="Umesh\profile.html">Profile</a>
       <a href="javascript:void(0);" class="icon" onclick="mobNav()">
@@ -60,8 +60,9 @@ if ($resultCheck > 0) {
       <div class="column side"></div>
 
       <div class="column middle">
-        <h3><?php echo $name?></h3>
-        <h3><?php echo $type?></h3>
+        <div id="description">
+        <h3>Name: <?php echo $name?></h3>
+        <h3>Specialized: <?php echo $type?></h3>
 
         <h3>About</h3>
         <p>
@@ -92,6 +93,7 @@ if ($resultCheck > 0) {
           <li>Tel: 011235659</li>
           <li>Email: abcd@gmail.com</li>
         </ul>
+      </div>
       </div>
 
       <div class="column side"></div>
