@@ -1,5 +1,21 @@
 <?php
-include_once './dbcon.php'
+include_once './php/dbcon.php';
+$seeker  = $_GET['seeker_id'];
+        
+$sql = "SELECT * FROM job_seekers where job_seeker_id = $seeker;";
+$result = mysqli_query($conn, $sql);
+$resultCheck = mysqli_num_rows($result);
+
+if ($resultCheck > 0) {
+  while ($row = mysqli_fetch_assoc($result)) {
+    // $job_seeker_id = $row['job_seeker_id'];
+    $name = $row['name'];
+    $experties = $row['experties'];
+    $type = $row['job_type'];
+    $experience = $row['experience'];
+  }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,15 +40,15 @@ include_once './dbcon.php'
 
   <body>
     <div class="header">
-      <h1><a href="home.html">JOBz</a></h1>
+      <h1><a href="home.php">JOBz</a></h1>
     </div>
 
     <div class="topnav" id="myTopNav">
-      <a href="home.html">Home</a>
-      <a href="categories.html">Categories</a>
+      <a href="home.php">Home</a>
+      <a href="categories.php">Categories</a>
       <a href="Ashini/Postajob.html">Post a job</a>
-      <a href="applicants.html">Applicants</a>
-      <a href="jobs.html">Jobs</a>
+      <a href="applicants.php">Applicants</a>
+      <a href="jobs.php">Jobs</a>
       <a href="contact.html">Contact us</a>
       <a href="about.html">About us</a>
       <a id="signup" href="signup.html">Signup</a>
@@ -47,8 +63,8 @@ include_once './dbcon.php'
       <div class="column side"></div>
 
       <div class="column middle">
-        <h3>A.D.S.Gunasekara</h3>
-        <h3>Full Stack Web Developer</h3>
+        <h3><?php echo $name?></h3>
+        <h3><?php echo $type?></h3>
 
         <h3>About</h3>
         <p>

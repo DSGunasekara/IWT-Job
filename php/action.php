@@ -8,7 +8,7 @@ include_once './dbcon.php'
 
 // $jobz = $_SESSION['new_job_id'];
 $var_value  = $_GET['rowid'];
-echo $var_value ;
+echo $var_value;
 
 ?>
 

@@ -17,15 +17,15 @@ include_once './php/dbcon.php'
 <body>
 
     <div class="header">
-        <h1> <a href="home.html">JOBz</a> </h1>
+        <h1> <a href="home.php">JOBz</a> </h1>
     </div>
 
     <div class="topnav" id="myTopNav">
-        <a href="home.html">Home</a>
-        <a href="categories.html">Categories</a>
+        <a href="home.php">Home</a>
+        <a href="categories.php">Categories</a>
         <a href="Ashini/Postajob.html">Post a job</a>
-        <a href="applicants.html">Applicants</a>
-        <a href="jobs.html">Jobs</a>
+        <a href="applicants.php">Applicants</a>
+        <a href="jobs.php">Jobs</a>
         <a href="contact.html">Contact us</a>
         <a href="about.html">About us</a>
         <a id="signup" href="signup.html">Signup</a>
@@ -87,6 +87,7 @@ include_once './php/dbcon.php'
                   
                           if ($resultCheck > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
+                              $job_id = $row['job_id'];
                               $job_name = $row['job_name'];
                               $company_name = $row['company_name'];
                               $job_type = $row['job_type'];
@@ -123,7 +124,10 @@ include_once './php/dbcon.php'
                               <th></th>
                               <th></th>
                               <td>
-                                <a class="view-more" href="jobPost.html">View More</a>
+                              <form method="get" action="jobPost.php">
+                                <input type="hidden" name="id" value=<?php echo $job_id?>>
+                                <input type="submit" class="view-more" value="View More">
+                              </form>
                               </td>
                             </tr>
                           </table><br>
@@ -140,6 +144,7 @@ include_once './php/dbcon.php'
                   
                           if ($resultCheck > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
+                              $job_id = $row['job_id'];
                               $job_name = $row['job_name'];
                               $company_name = $row['company_name'];
                               $job_type = $row['job_type'];
@@ -176,7 +181,10 @@ include_once './php/dbcon.php'
                               <th></th>
                               <th></th>
                               <td>
-                                <a class="view-more" href="jobPost.html">View More</a>
+                              <form method="get" action="jobPost.php">
+                                <input type="hidden" name="id" value=<?php echo $job_id?>>
+                                <input type="submit" class="view-more" value="View More">
+                              </form>
                               </td>
                             </tr>
                           </table><br>
@@ -192,6 +200,7 @@ include_once './php/dbcon.php'
                   
                           if ($resultCheck > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
+                              $job_id = $row['job_id'];
                               $job_name = $row['job_name'];
                               $company_name = $row['company_name'];
                               $job_type = $row['job_type'];
@@ -228,7 +237,10 @@ include_once './php/dbcon.php'
                               <th></th>
                               <th></th>
                               <td>
-                                <a class="view-more" href="jobPost.html">View More</a>
+                              <form method="get" action="jobPost.php">
+                                <input type="hidden" name="id" value=<?php echo $job_id?>>
+                                <input type="submit" class="view-more" value="View More">
+                              </form>
                               </td>
                             </tr>
                           </table><br>
@@ -244,6 +256,7 @@ include_once './php/dbcon.php'
                   
                           if ($resultCheck > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
+                              $job_id = $row['job_id'];
                               $job_name = $row['job_name'];
                               $company_name = $row['company_name'];
                               $job_type = $row['job_type'];
@@ -280,7 +293,10 @@ include_once './php/dbcon.php'
                               <th></th>
                               <th></th>
                               <td>
-                                <a class="view-more" href="jobPost.html">View More</a>
+                              <form method="get" action="jobPost.php">
+                                <input type="hidden" name="id" value=<?php echo $job_id?>>
+                                <input type="submit" class="view-more" value="View More">
+                              </form>
                               </td>
                             </tr>
                           </table><br>
@@ -295,6 +311,7 @@ include_once './php/dbcon.php'
                   
                           if ($resultCheck > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
+                              $job_id = $row['job_id'];
                               $job_name = $row['job_name'];
                               $company_name = $row['company_name'];
                               $job_type = $row['job_type'];
@@ -331,7 +348,10 @@ include_once './php/dbcon.php'
                               <th></th>
                               <th></th>
                               <td>
-                                <a class="view-more" href="jobPost.html">View More</a>
+                              <form method="get" action="jobPost.php">
+                                <input type="hidden" name="id" value=<?php echo $job_id?>>
+                                <input type="submit" class="view-more" value="View More">
+                              </form>
                               </td>
                             </tr>
                           </table><br>
@@ -346,6 +366,7 @@ include_once './php/dbcon.php'
                   
                           if ($resultCheck > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
+                              $job_id = $row['job_id'];
                               $job_name = $row['job_name'];
                               $company_name = $row['company_name'];
                               $job_type = $row['job_type'];
@@ -382,7 +403,10 @@ include_once './php/dbcon.php'
                               <th></th>
                               <th></th>
                               <td>
-                                <a class="view-more" href="jobPost.html">View More</a>
+                              <form method="get" action="jobPost.php">
+                                <input type="hidden" name="id" value=<?php echo $job_id?>>
+                                <input type="submit" class="view-more" value="View More">
+                              </form>
                               </td>
                             </tr>
                           </table><br>
@@ -397,6 +421,7 @@ include_once './php/dbcon.php'
                   
                           if ($resultCheck > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
+                              $job_id = $row['job_id'];
                               $job_name = $row['job_name'];
                               $company_name = $row['company_name'];
                               $job_type = $row['job_type'];
@@ -433,7 +458,10 @@ include_once './php/dbcon.php'
                               <th></th>
                               <th></th>
                               <td>
-                                <a class="view-more" href="jobPost.html">View More</a>
+                              <form method="get" action="jobPost.php">
+                                <input type="hidden" name="id" value=<?php echo $job_id?>>
+                                <input type="submit" class="view-more" value="View More">
+                              </form>
                               </td>
                             </tr>
                           </table><br>
@@ -448,6 +476,7 @@ include_once './php/dbcon.php'
                   
                           if ($resultCheck > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
+                              $job_id = $row['job_id'];
                               $job_name = $row['job_name'];
                               $company_name = $row['company_name'];
                               $job_type = $row['job_type'];
@@ -484,7 +513,10 @@ include_once './php/dbcon.php'
                               <th></th>
                               <th></th>
                               <td>
-                                <a class="view-more" href="jobPost.html">View More</a>
+                              <form method="get" action="jobPost.php">
+                                <input type="hidden" name="id" value=<?php echo $job_id?>>
+                                <input type="submit" class="view-more" value="View More">
+                              </form>
                               </td>
                             </tr>
                           </table><br>
