@@ -126,7 +126,7 @@ include_once './php/dbcon.php'
             <tr>
               <th></th>
               <td>
-                <a class="view-more" href="applicantPost.html">View More</a>
+                <input class="view-more" type="submit" value="View More">
               </td>
             </tr>
           </table>
@@ -169,7 +169,9 @@ include_once './php/dbcon.php'
             <tr>
               <th></th>
               <td>
-                <a class="view-more" href="applicantPost.html">View More</a>
+                <form action="./php/action.php" method = "post">
+                <input class="view-more" type="submit" value="View More">
+                </form>
               </td>
             </tr>
           </table>
@@ -212,7 +214,7 @@ include_once './php/dbcon.php'
             <tr>
               <th></th>
               <td>
-                <a class="view-more" href="applicantPost.html">View More</a>
+                <input class="view-more" type="submit" value="View More">
               </td>
             </tr>
           </table>
@@ -254,7 +256,7 @@ include_once './php/dbcon.php'
             <tr>
               <th></th>
               <td>
-                <a class="view-more" href="applicantPost.html">View More</a>
+                <input class="view-more" type="submit" value="View More">
               </td>
             </tr>
           </table>
@@ -296,7 +298,7 @@ include_once './php/dbcon.php'
             <tr>
               <th></th>
               <td>
-                <a class="view-more" href="applicantPost.html">View More</a>
+                <input class="view-more" type="submit" value="View More">
               </td>
             </tr>
           </table>
@@ -338,7 +340,7 @@ include_once './php/dbcon.php'
             <tr>
               <th></th>
               <td>
-                <a class="view-more" href="applicantPost.html">View More</a>
+                <input class="view-more" type="submit" value="View More">
               </td>
             </tr>
           </table>
@@ -380,7 +382,7 @@ include_once './php/dbcon.php'
             <tr>
               <th></th>
               <td>
-                <a class="view-more" href="applicantPost.html">View More</a>
+                <input class="view-more" type="submit" value="View More">
               </td>
             </tr>
           </table>
@@ -422,7 +424,7 @@ include_once './php/dbcon.php'
             <tr>
               <th></th>
               <td>
-                <a class="view-more" href="applicantPost.html">View More</a>
+                <input class="view-more" type="submit" value="View More">
               </td>
             </tr>
           </table>
@@ -464,7 +466,7 @@ include_once './php/dbcon.php'
             <tr>
               <th></th>
               <td>
-                <a class="view-more" href="applicantPost.html">View More</a>
+                <input class="view-more" type="submit" value="View More">
               </td>
             </tr>
           </table>
@@ -506,7 +508,7 @@ include_once './php/dbcon.php'
             <tr>
               <th></th>
               <td>
-                <a class="view-more" href="applicantPost.html">View More</a>
+                <input class="view-more" type="submit" value="View More">
               </td>
             </tr>
           </table>
@@ -548,7 +550,7 @@ include_once './php/dbcon.php'
             <tr>
               <th></th>
               <td>
-                <a class="view-more" href="applicantPost.html">View More</a>
+                <input class="view-more" type="submit" value="View More">
               </td>
             </tr>
           </table>
