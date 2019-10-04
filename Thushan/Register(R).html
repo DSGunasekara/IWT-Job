@@ -1,101 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Company Registration</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../src/styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Caveat&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <title>Company Registration</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../src/styles.css">
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Gayathri&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Caveat&display=swap" rel="stylesheet">
-</head>
-
-<body>
-
-  <div class="header">
-    <h1> <a href="../home.html">JOBz</a> </h1>
-  </div>
-
-  <div class="topnav" id="myTopNav">
-    <a href="../home.html">Home</a>
-    <a href="../categories.html">Categories</a>
-    <a href="../Ashini/Post a job.html">Post a job</a>
-    <a href="../applicants.html">Applicants</a>
-    <a href="../jobs.html">Jobs</a>
-    <a href="../contact.html">Contact us</a>
-    <a href="../about.html">About us</a>
-    <a id="signup" href="../signup.html">Signup</a>
-    <a id="login" href="../Thushan/Login.html">Login</a>
-    <a id="profile" href="../Umesh/profile.html">Profile</a>
-    <a href="javascript:void(0);" class="icon" onclick="mobNav()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
-
-  <div class="row">
-
-    <div class="column side">
+  <body>
+    <div class="header">
+      <h1><a href="../home.php">JOBz</a></h1>
     </div>
 
-    <div class="column middle">
-
-
-      <form width="100%" name="regForm" onsubmit="return validateForm()" method="post">
-
-        <div class="container">
-
-          <h1>Register</h1>
-
-          <hr>
-
-
-          <label><b>Organization</b></label>
-          <input type="text" placeholder="Organization" name="oname" required>
-
-          <input type="file" id="real-file" hidden="hidden" />
-          <button type="button" id="custom-button" onclick="loadData()">Chose Logo</button>
-          <span id="custom-text">No file chose</span>
-          <br>
-
-          <label><b>Your Full Name</b></label>
-          <input type="text" placeholder="Full Name" name="fname" required>
-
-          <label><b>Phone Number</b></label>
-          <input type="text" id="phoneNo" placeholder="Phone Number" name="phn" required>
-
-          <label><b>Email Address</b></label>
-          <input type="text" placeholder="Enter Email Address" name="email" required>
-
-          <label><b>Password</b></label>
-          <input type="password" id="passw" placeholder="Enter Password" name="psw" required>
-
-          <label><b>Repeat Password</b></label>
-          <input type="password" id="repasswd" placeholder="Repeat Password" name="psw-repeat" required>
-
-
-          <button type="Submit" class="registerbtn">REGISTER</button>
-
-          <hr>
-        </div>
-
-      </form>
-
+    <div class="topnav" id="myTopNav">
+      <a href="../home.php">Home</a>
+      <a href="../categories.php">Categories</a>
+      <a href="../Ashini/Post a job.html">Post a job</a>
+      <a href="../applicants.php">Applicants</a>
+      <a href="../jobs.php">Jobs</a>
+      <a href="../contact.html">Contact us</a>
+      <a href="../about.html">About us</a>
+      <a id="signup" href="../signup.html">Signup</a>
+      <a id="login" href="../Thushan/Login.html">Login</a>
+      <a id="profile" href="../Umesh/profile.html">Profile</a>
+      <a href="javascript:void(0);" class="icon" onclick="mobNav()">
+        <i class="fa fa-bars"></i>
+      </a>
     </div>
 
-    <div class="column side">
+    <div class="row">
+      <div class="column side"></div>
+
+      <div class="column middle">
+        <form
+          width="100%"
+          name="regForm"
+          onsubmit="return validateForm()"
+          method="post"
+        >
+          <div class="container">
+            <h1>Register</h1>
+
+            <hr />
+
+            <label><b>Organization</b></label>
+            <input
+              type="text"
+              placeholder="Organization"
+              name="oname"
+              required
+            />
+
+            <input type="file" id="real-file" hidden="hidden" />
+            <button type="button" id="custom-button" onclick="loadData()">
+              Chose Logo
+            </button>
+            <span id="custom-text">No file chose</span>
+            <br />
+
+            <label><b>Your Full Name</b></label>
+            <input type="text" placeholder="Full Name" name="fname" required />
+
+            <label><b>Phone Number</b></label>
+            <input
+              type="text"
+              id="phoneNo"
+              placeholder="Phone Number"
+              name="phn"
+              required
+            />
+
+            <label><b>Email Address</b></label>
+            <input
+              type="text"
+              placeholder="Enter Email Address"
+              name="email"
+              required
+            />
+
+            <label><b>Password</b></label>
+            <input
+              type="password"
+              id="passw"
+              placeholder="Enter Password"
+              name="psw"
+              required
+            />
+
+            <label><b>Repeat Password</b></label>
+            <input
+              type="password"
+              id="repasswd"
+              placeholder="Repeat Password"
+              name="psw-repeat"
+              required
+            />
+
+            <button type="Submit" class="registerbtn">REGISTER</button>
+
+            <hr />
+          </div>
+        </form>
+      </div>
+
+      <div class="column side"></div>
     </div>
 
-
-  </div>
-
-  <footer>
-    <h4>This is a project of SLIIT students</h4>
-  </footer>
-
-</body>
-<script src="../src/script.js"></script>
-<script src="js.js"></script>
-
+    <footer>
+      <h4>This is a project of SLIIT students</h4>
+    </footer>
+  </body>
+  <script src="../src/script.js"></script>
+  <script src="js.js"></script>
 </html>

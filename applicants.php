@@ -8,10 +8,7 @@ include_once './php/dbcon.php'
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="src\styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Gayathri&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -89,19 +86,24 @@ include_once './php/dbcon.php'
 
         <div class="app-post">
           <?php
-                          $countSql = "SELECT * FROM job_seekers;";
-                          $countResult =  mysqli_query($conn, $countSql);
-                          $count = mysqli_num_rows($countResult);
+            $countSql = "SELECT * FROM job_seekers;";
+            $countResult =  mysqli_query($conn, $countSql);
+            $count = mysqli_num_rows($countResult);
                           
-                          $sql = "SELECT * FROM job_seekers where job_seeker_id = $count;";
-                          $result = mysqli_query($conn, $sql);
-                          $resultCheck = mysqli_num_rows($result);
-                          $count = $count -1;
+            $sql = "SELECT * FROM job_seekers where job_seeker_id = $count;";
+            $result = mysqli_query($conn, $sql);
+            $resultCheck = mysqli_num_rows($result);
+            $count = $count -1;
                   
-                          if ($resultCheck >
-          0) { while ($row = mysqli_fetch_assoc($result)) { $name =
-          $row['name']; $experties = $row['experties']; $type =
-          $row['job_type']; $experience = $row['experience']; } } ?>
+            if ($resultCheck >  0) { 
+              while ($row = mysqli_fetch_assoc($result)) {
+                $job_seeker_id = $row['job_seeker_id'];
+                $name =$row['name']; 
+                $experties = $row['experties']; $type =
+                $row['job_type']; $experience = $row['experience']; 
+                }
+              }
+         ?>
 
           <h2><?php echo $type?></h2>
 
@@ -126,7 +128,10 @@ include_once './php/dbcon.php'
             <tr>
               <th></th>
               <td>
-                <input class="view-more" type="submit" value="View More">
+              <form method="get" action="applicantPost.php">
+                <input type="hidden" name="seeker_id" value=<?php echo $job_seeker_id?>>
+                <input type="submit" class="view-more" value="View More">
+              </form>
               </td>
             </tr>
           </table>
@@ -136,15 +141,21 @@ include_once './php/dbcon.php'
 
         <div class="app-post">
           <?php
-                          $sql = "SELECT * FROM job_seekers where job_seeker_id = $count;";
-                          $result = mysqli_query($conn, $sql);
-                          $resultCheck = mysqli_num_rows($result);
-                          $count = $count -1;
+            $sql = "SELECT * FROM job_seekers where job_seeker_id = $count;";
+            $result = mysqli_query($conn, $sql);
+            $resultCheck = mysqli_num_rows($result);
+            $count = $count -1;
                   
-                          if ($resultCheck >
-          0) { while ($row = mysqli_fetch_assoc($result)) { $name =
-          $row['name']; $experties = $row['experties']; $type =
-          $row['job_type']; $experience = $row['experience']; } } ?>
+            if ($resultCheck > 0) {
+               while ($row = mysqli_fetch_assoc($result)) { 
+                  $job_seeker_id = $row['job_seeker_id'];
+                  $name = $row['name']; 
+                  $experties = $row['experties']; 
+                  $type = $row['job_type']; 
+                  $experience = $row['experience'];
+                }
+            }
+         ?>
 
           <h2><?php echo $type?></h2>
 
@@ -169,9 +180,10 @@ include_once './php/dbcon.php'
             <tr>
               <th></th>
               <td>
-                <form action="./php/action.php" method = "post">
-                <input class="view-more" type="submit" value="View More">
-                </form>
+              <form method="get" action="applicantPost.php">
+                <input type="hidden" name="seeker_id" value=<?php echo $job_seeker_id?>>
+                <input type="submit" class="view-more" value="View More">
+              </form>
               </td>
             </tr>
           </table>
@@ -181,15 +193,21 @@ include_once './php/dbcon.php'
 
         <div class="app-post">
           <?php
-                          $sql = "SELECT * FROM job_seekers where job_seeker_id = $count;";
-                          $result = mysqli_query($conn, $sql);
-                          $resultCheck = mysqli_num_rows($result);
-                          $count = $count -1;
+            $sql = "SELECT * FROM job_seekers where job_seeker_id = $count;";
+            $result = mysqli_query($conn, $sql);
+            $resultCheck = mysqli_num_rows($result);
+            $count = $count -1;
                   
-                          if ($resultCheck >
-          0) { while ($row = mysqli_fetch_assoc($result)) { $name =
-          $row['name']; $experties = $row['experties']; $type =
-          $row['job_type']; $experience = $row['experience']; } } ?>
+            if ($resultCheck > 0) {
+               while ($row = mysqli_fetch_assoc($result)) { 
+                $job_seeker_id = $row['job_seeker_id'];
+                $name = $row['name'];
+                $experties = $row['experties']; 
+                $type = $row['job_type']; 
+                $experience = $row['experience']; 
+               }
+            }
+          ?>
 
           <h2><?php echo $type?></h2>
 
@@ -214,7 +232,10 @@ include_once './php/dbcon.php'
             <tr>
               <th></th>
               <td>
-                <input class="view-more" type="submit" value="View More">
+              <form method="get" action="applicantPost.php">
+                <input type="hidden" name="seeker_id" value=<?php echo $job_seeker_id?>>
+                <input type="submit" class="view-more" value="View More">
+              </form>
               </td>
             </tr>
           </table>
@@ -223,15 +244,21 @@ include_once './php/dbcon.php'
         </div>
         <div class="app-post">
           <?php
-                          $sql = "SELECT * FROM job_seekers where job_seeker_id = $count;";
-                          $result = mysqli_query($conn, $sql);
-                          $resultCheck = mysqli_num_rows($result);
-                          $count = $count -1;
+            $sql = "SELECT * FROM job_seekers where job_seeker_id = $count;";
+            $result = mysqli_query($conn, $sql);
+            $resultCheck = mysqli_num_rows($result);
+            $count = $count -1;
                   
-                          if ($resultCheck >
-          0) { while ($row = mysqli_fetch_assoc($result)) { $name =
-          $row['name']; $experties = $row['experties']; $type =
-          $row['job_type']; $experience = $row['experience']; } } ?>
+            if ($resultCheck > 0) {
+                while ($row = mysqli_fetch_assoc($result)) { 
+                $job_seeker_id = $row['job_seeker_id']; 
+                $name = $row['name']; 
+                $experties = $row['experties']; 
+                $type = $row['job_type']; 
+                $experience = $row['experience']; 
+                }
+              }
+          ?>
 
           <h2><?php echo $type?></h2>
 
@@ -256,7 +283,316 @@ include_once './php/dbcon.php'
             <tr>
               <th></th>
               <td>
-                <input class="view-more" type="submit" value="View More">
+              <form method="get" action="applicantPost.php">
+                <input type="hidden" name="seeker_id" value=<?php echo $job_seeker_id?>>
+                <input type="submit" class="view-more" value="View More">
+              </form>
+              </td>
+            </tr>
+          </table>
+
+          <br />
+        </div>
+        <div class="app-post">
+        <?php
+            $sql = "SELECT * FROM job_seekers where job_seeker_id = $count;";
+            $result = mysqli_query($conn, $sql);
+            $resultCheck = mysqli_num_rows($result);
+            $count = $count -1;
+                  
+            if ($resultCheck > 0) {
+               while ($row = mysqli_fetch_assoc($result)) { 
+                $job_seeker_id = $row['job_seeker_id'];
+                $name = $row['name']; 
+                $experties = $row['experties']; 
+                $type = $row['job_type']; 
+                $experience = $row['experience']; 
+              }
+           }
+         ?>
+
+          <h2><?php echo $type?></h2>
+
+          <table style="width:100%">
+            <tr>
+              <th rowspan="5">
+                <img src="src\avatar.jfif" alt="avatar" />
+              </th>
+            </tr>
+            <tr>
+              <th>Name:</th>
+              <td><?php echo $name?></td>
+            </tr>
+            <tr>
+              <th>Experts in:</th>
+              <td><?php echo $experties?></td>
+            </tr>
+            <tr>
+              <th>Experienxe:</th>
+              <td><?php echo $experience?></td>
+            </tr>
+            <tr>
+              <th></th>
+              <td>
+              <form method="get" action="applicantPost.php">
+                <input type="hidden" name="seeker_id" value=<?php echo $job_seeker_id?>>
+                <input type="submit" class="view-more" value="View More">
+              </form>
+              </td>
+            </tr>
+          </table>
+
+          <br />
+        </div>
+        <div class="app-post">
+        <?php
+            $sql = "SELECT * FROM job_seekers where job_seeker_id = $count;";
+            $result = mysqli_query($conn, $sql);
+            $resultCheck = mysqli_num_rows($result);
+            $count = $count -1;
+                  
+            if ($resultCheck > 0) {
+               while ($row = mysqli_fetch_assoc($result)) { 
+                $job_seeker_id = $row['job_seeker_id'];
+                $name = $row['name']; 
+                $experties = $row['experties']; 
+                $type = $row['job_type']; 
+                $experience = $row['experience']; 
+              }
+           }
+         ?>
+
+          <h2><?php echo $type?></h2>
+
+          <table style="width:100%">
+            <tr>
+              <th rowspan="5">
+                <img src="src\avatar.jfif" alt="avatar" />
+              </th>
+            </tr>
+            <tr>
+              <th>Name:</th>
+              <td><?php echo $name?></td>
+            </tr>
+            <tr>
+              <th>Experts in:</th>
+              <td><?php echo $experties?></td>
+            </tr>
+            <tr>
+              <th>Experienxe:</th>
+              <td><?php echo $experience?></td>
+            </tr>
+            <tr>
+              <th></th>
+              <td>
+              <form method="get" action="applicantPost.php">
+                <input type="hidden" name="seeker_id" value=<?php echo $job_seeker_id?>>
+                <input type="submit" class="view-more" value="View More">
+              </form>
+              </td>
+            </tr>
+          </table>
+
+          <br />
+        </div>
+        <div class="app-post">
+        <?php
+            $sql = "SELECT * FROM job_seekers where job_seeker_id = $count;";
+            $result = mysqli_query($conn, $sql);
+            $resultCheck = mysqli_num_rows($result);
+            $count = $count -1;
+                  
+            if ($resultCheck > 0) {
+               while ($row = mysqli_fetch_assoc($result)) { 
+                $job_seeker_id = $row['job_seeker_id'];
+                $name = $row['name']; 
+                $experties = $row['experties']; 
+                $type = $row['job_type']; 
+                $experience = $row['experience']; 
+              }
+           }
+         ?>
+
+          <h2><?php echo $type?></h2>
+
+          <table style="width:100%">
+            <tr>
+              <th rowspan="5">
+                <img src="src\avatar.jfif" alt="avatar" />
+              </th>
+            </tr>
+            <tr>
+              <th>Name:</th>
+              <td><?php echo $name?></td>
+            </tr>
+            <tr>
+              <th>Experts in:</th>
+              <td><?php echo $experties?></td>
+            </tr>
+            <tr>
+              <th>Experienxe:</th>
+              <td><?php echo $experience?></td>
+            </tr>
+            <tr>
+              <th></th>
+              <td>
+              <form method="get" action="applicantPost.php">
+                <input type="hidden" name="seeker_id" value=<?php echo $job_seeker_id?>>
+                <input type="submit" class="view-more" value="View More">
+              </form>
+              </td>
+            </tr>
+          </table>
+
+          <br />
+        </div>
+        <div class="app-post">
+        <?php
+            $sql = "SELECT * FROM job_seekers where job_seeker_id = $count;";
+            $result = mysqli_query($conn, $sql);
+            $resultCheck = mysqli_num_rows($result);
+            $count = $count -1;
+                  
+            if ($resultCheck > 0) {
+               while ($row = mysqli_fetch_assoc($result)) { 
+                $job_seeker_id = $row['job_seeker_id'];
+                $name = $row['name']; 
+                $experties = $row['experties']; 
+                $type = $row['job_type']; 
+                $experience = $row['experience']; 
+              }
+           }
+         ?>
+
+          <h2><?php echo $type?></h2>
+
+          <table style="width:100%">
+            <tr>
+              <th rowspan="5">
+                <img src="src\avatar.jfif" alt="avatar" />
+              </th>
+            </tr>
+            <tr>
+              <th>Name:</th>
+              <td><?php echo $name?></td>
+            </tr>
+            <tr>
+              <th>Experts in:</th>
+              <td><?php echo $experties?></td>
+            </tr>
+            <tr>
+              <th>Experienxe:</th>
+              <td><?php echo $experience?></td>
+            </tr>
+            <tr>
+              <th></th>
+              <td>
+              <form method="get" action="applicantPost.php">
+                <input type="hidden" name="seeker_id" value=<?php echo $job_seeker_id?>>
+                <input type="submit" class="view-more" value="View More">
+              </form>
+              </td>
+            </tr>
+          </table>
+
+          <br />
+        </div>
+        <div class="app-post">
+        <?php
+            $sql = "SELECT * FROM job_seekers where job_seeker_id = $count;";
+            $result = mysqli_query($conn, $sql);
+            $resultCheck = mysqli_num_rows($result);
+            $count = $count -1;
+                  
+            if ($resultCheck > 0) {
+               while ($row = mysqli_fetch_assoc($result)) { 
+                $job_seeker_id = $row['job_seeker_id'];
+                $name = $row['name']; 
+                $experties = $row['experties']; 
+                $type = $row['job_type']; 
+                $experience = $row['experience']; 
+              }
+           }
+         ?>
+
+          <h2><?php echo $type?></h2>
+
+          <table style="width:100%">
+            <tr>
+              <th rowspan="5">
+                <img src="src\avatar.jfif" alt="avatar" />
+              </th>
+            </tr>
+            <tr>
+              <th>Name:</th>
+              <td><?php echo $name?></td>
+            </tr>
+            <tr>
+              <th>Experts in:</th>
+              <td><?php echo $experties?></td>
+            </tr>
+            <tr>
+              <th>Experienxe:</th>
+              <td><?php echo $experience?></td>
+            </tr>
+            <tr>
+              <th></th>
+              <td>
+              <form method="get" action="applicantPost.php">
+                <input type="hidden" name="seeker_id" value=<?php echo $job_seeker_id?>>
+                <input type="submit" class="view-more" value="View More">
+              </form>
+              </td>
+            </tr>
+          </table>
+
+          <br />
+        </div>
+        <div class="app-post">
+        <?php
+            $sql = "SELECT * FROM job_seekers where job_seeker_id = $count;";
+            $result = mysqli_query($conn, $sql);
+            $resultCheck = mysqli_num_rows($result);
+            $count = $count -1;
+                  
+            if ($resultCheck > 0) {
+               while ($row = mysqli_fetch_assoc($result)) { 
+                $job_seeker_id = $row['job_seeker_id'];
+                $name = $row['name']; 
+                $experties = $row['experties']; 
+                $type = $row['job_type']; 
+                $experience = $row['experience']; 
+              }
+           }
+         ?>
+
+          <h2><?php echo $type?></h2>
+
+          <table style="width:100%">
+            <tr>
+              <th rowspan="5">
+                <img src="src\avatar.jfif" alt="avatar" />
+              </th>
+            </tr>
+            <tr>
+              <th>Name:</th>
+              <td><?php echo $name?></td>
+            </tr>
+            <tr>
+              <th>Experts in:</th>
+              <td><?php echo $experties?></td>
+            </tr>
+            <tr>
+              <th>Experienxe:</th>
+              <td><?php echo $experience?></td>
+            </tr>
+            <tr>
+              <th></th>
+              <td>
+              <form method="get" action="applicantPost.php">
+                <input type="hidden" name="seeker_id" value=<?php echo $job_seeker_id?>>
+                <input type="submit" class="view-more" value="View More">
+              </form>
               </td>
             </tr>
           </table>
@@ -265,15 +601,21 @@ include_once './php/dbcon.php'
         </div>
         <div class="app-post">
           <?php
-                          $sql = "SELECT * FROM job_seekers where job_seeker_id = $count;";
-                          $result = mysqli_query($conn, $sql);
-                          $resultCheck = mysqli_num_rows($result);
-                          $count = $count -1;
+            $sql = "SELECT * FROM job_seekers where job_seeker_id = $count;";
+            $result = mysqli_query($conn, $sql);
+            $resultCheck = mysqli_num_rows($result);
+            $count = $count -1;
                   
-                          if ($resultCheck >
-          0) { while ($row = mysqli_fetch_assoc($result)) { $name =
-          $row['name']; $experties = $row['experties']; $type =
-          $row['job_type']; $experience = $row['experience']; } } ?>
+            if ($resultCheck > 0) {
+               while ($row = mysqli_fetch_assoc($result)) { 
+                $job_seeker_id = $row['job_seeker_id'];
+                $name = $row['name']; 
+                $experties = $row['experties']; 
+                $type = $row['job_type']; 
+                $experience = $row['experience']; 
+              }
+           }
+         ?>
 
           <h2><?php echo $type?></h2>
 
@@ -298,259 +640,10 @@ include_once './php/dbcon.php'
             <tr>
               <th></th>
               <td>
-                <input class="view-more" type="submit" value="View More">
-              </td>
-            </tr>
-          </table>
-
-          <br />
-        </div>
-        <div class="app-post">
-          <?php
-                          $sql = "SELECT * FROM job_seekers where job_seeker_id = $count;";
-                          $result = mysqli_query($conn, $sql);
-                          $resultCheck = mysqli_num_rows($result);
-                          $count = $count -1;
-                  
-                          if ($resultCheck >
-          0) { while ($row = mysqli_fetch_assoc($result)) { $name =
-          $row['name']; $experties = $row['experties']; $type =
-          $row['job_type']; $experience = $row['experience']; } } ?>
-
-          <h2><?php echo $type?></h2>
-
-          <table style="width:100%">
-            <tr>
-              <th rowspan="5">
-                <img src="src\avatar.jfif" alt="avatar" />
-              </th>
-            </tr>
-            <tr>
-              <th>Name:</th>
-              <td><?php echo $name?></td>
-            </tr>
-            <tr>
-              <th>Experts in:</th>
-              <td><?php echo $experties?></td>
-            </tr>
-            <tr>
-              <th>Experienxe:</th>
-              <td><?php echo $experience?></td>
-            </tr>
-            <tr>
-              <th></th>
-              <td>
-                <input class="view-more" type="submit" value="View More">
-              </td>
-            </tr>
-          </table>
-
-          <br />
-        </div>
-        <div class="app-post">
-          <?php
-                          $sql = "SELECT * FROM job_seekers where job_seeker_id = $count;";
-                          $result = mysqli_query($conn, $sql);
-                          $resultCheck = mysqli_num_rows($result);
-                          $count = $count -1;
-                  
-                          if ($resultCheck >
-          0) { while ($row = mysqli_fetch_assoc($result)) { $name =
-          $row['name']; $experties = $row['experties']; $type =
-          $row['job_type']; $experience = $row['experience']; } } ?>
-
-          <h2><?php echo $type?></h2>
-
-          <table style="width:100%">
-            <tr>
-              <th rowspan="5">
-                <img src="src\avatar.jfif" alt="avatar" />
-              </th>
-            </tr>
-            <tr>
-              <th>Name:</th>
-              <td><?php echo $name?></td>
-            </tr>
-            <tr>
-              <th>Experts in:</th>
-              <td><?php echo $experties?></td>
-            </tr>
-            <tr>
-              <th>Experienxe:</th>
-              <td><?php echo $experience?></td>
-            </tr>
-            <tr>
-              <th></th>
-              <td>
-                <input class="view-more" type="submit" value="View More">
-              </td>
-            </tr>
-          </table>
-
-          <br />
-        </div>
-        <div class="app-post">
-          <?php
-                          $sql = "SELECT * FROM job_seekers where job_seeker_id = $count;";
-                          $result = mysqli_query($conn, $sql);
-                          $resultCheck = mysqli_num_rows($result);
-                          $count = $count -1;
-                  
-                          if ($resultCheck >
-          0) { while ($row = mysqli_fetch_assoc($result)) { $name =
-          $row['name']; $experties = $row['experties']; $type =
-          $row['job_type']; $experience = $row['experience']; } } ?>
-
-          <h2><?php echo $type?></h2>
-
-          <table style="width:100%">
-            <tr>
-              <th rowspan="5">
-                <img src="src\avatar.jfif" alt="avatar" />
-              </th>
-            </tr>
-            <tr>
-              <th>Name:</th>
-              <td><?php echo $name?></td>
-            </tr>
-            <tr>
-              <th>Experts in:</th>
-              <td><?php echo $experties?></td>
-            </tr>
-            <tr>
-              <th>Experienxe:</th>
-              <td><?php echo $experience?></td>
-            </tr>
-            <tr>
-              <th></th>
-              <td>
-                <input class="view-more" type="submit" value="View More">
-              </td>
-            </tr>
-          </table>
-
-          <br />
-        </div>
-        <div class="app-post">
-          <?php
-                          $sql = "SELECT * FROM job_seekers where job_seeker_id = $count;";
-                          $result = mysqli_query($conn, $sql);
-                          $resultCheck = mysqli_num_rows($result);
-                          $count = $count -1;
-                  
-                          if ($resultCheck >
-          0) { while ($row = mysqli_fetch_assoc($result)) { $name =
-          $row['name']; $experties = $row['experties']; $type =
-          $row['job_type']; $experience = $row['experience']; } } ?>
-
-          <h2><?php echo $type?></h2>
-
-          <table style="width:100%">
-            <tr>
-              <th rowspan="5">
-                <img src="src\avatar.jfif" alt="avatar" />
-              </th>
-            </tr>
-            <tr>
-              <th>Name:</th>
-              <td><?php echo $name?></td>
-            </tr>
-            <tr>
-              <th>Experts in:</th>
-              <td><?php echo $experties?></td>
-            </tr>
-            <tr>
-              <th>Experienxe:</th>
-              <td><?php echo $experience?></td>
-            </tr>
-            <tr>
-              <th></th>
-              <td>
-                <input class="view-more" type="submit" value="View More">
-              </td>
-            </tr>
-          </table>
-
-          <br />
-        </div>
-        <div class="app-post">
-          <?php
-                          $sql = "SELECT * FROM job_seekers where job_seeker_id = $count;";
-                          $result = mysqli_query($conn, $sql);
-                          $resultCheck = mysqli_num_rows($result);
-                          $count = $count -1;
-                  
-                          if ($resultCheck >
-          0) { while ($row = mysqli_fetch_assoc($result)) { $name =
-          $row['name']; $experties = $row['experties']; $type =
-          $row['job_type']; $experience = $row['experience']; } } ?>
-
-          <h2><?php echo $type?></h2>
-
-          <table style="width:100%">
-            <tr>
-              <th rowspan="5">
-                <img src="src\avatar.jfif" alt="avatar" />
-              </th>
-            </tr>
-            <tr>
-              <th>Name:</th>
-              <td><?php echo $name?></td>
-            </tr>
-            <tr>
-              <th>Experts in:</th>
-              <td><?php echo $experties?></td>
-            </tr>
-            <tr>
-              <th>Experienxe:</th>
-              <td><?php echo $experience?></td>
-            </tr>
-            <tr>
-              <th></th>
-              <td>
-                <input class="view-more" type="submit" value="View More">
-              </td>
-            </tr>
-          </table>
-
-          <br />
-        </div>
-        <div class="app-post">
-          <?php
-                          $sql = "SELECT * FROM job_seekers where job_seeker_id = $count;";
-                          $result = mysqli_query($conn, $sql);
-                          $resultCheck = mysqli_num_rows($result);
-                          $count = $count -1;
-                  
-                          if ($resultCheck >
-          0) { while ($row = mysqli_fetch_assoc($result)) { $name =
-          $row['name']; $experties = $row['experties']; $type =
-          $row['job_type']; $experience = $row['experience']; } } ?>
-
-          <h2><?php echo $type?></h2>
-
-          <table style="width:100%">
-            <tr>
-              <th rowspan="5">
-                <img src="src\avatar.jfif" alt="avatar" />
-              </th>
-            </tr>
-            <tr>
-              <th>Name:</th>
-              <td><?php echo $name?></td>
-            </tr>
-            <tr>
-              <th>Experts in:</th>
-              <td><?php echo $experties?></td>
-            </tr>
-            <tr>
-              <th>Experienxe:</th>
-              <td><?php echo $experience?></td>
-            </tr>
-            <tr>
-              <th></th>
-              <td>
-                <input class="view-more" type="submit" value="View More">
+              <form method="get" action="applicantPost.php">
+                <input type="hidden" name="seeker_id" value=<?php echo $job_seeker_id?>>
+                <input type="submit" class="view-more" value="View More">
+              </form>
               </td>
             </tr>
           </table>
