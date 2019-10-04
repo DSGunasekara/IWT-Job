@@ -13,6 +13,7 @@ if ($resultCheck > 0) {
     $experties = $row['experties'];
     $type = $row['job_type'];
     $experience = $row['experience'];
+    $aboutme = $row['about'];
   }
 }
 
@@ -66,19 +67,7 @@ if ($resultCheck > 0) {
 
         <h3>About</h3>
         <p>
-          If you get an offer to work at Zoom, take it. Zoom takes employee
-          happiness seriously and people genuinely love the company. Eric Yuan
-          is leaps and bounds beyond his peers when it comes to CEOs who care.
-          His governing motto is essentially that employees should wake up in
-          the morning happy to go to work; if that isn’t the case, he wants you
-          to be honest about that with management. He also wants Zoom partners
-          to win....If you get an offer to work at Zoom, take it. Zoom takes
-          employee happiness seriously and people genuinely love the company.
-          Eric Yuan is leaps and bounds beyond his peers when it comes to CEOs
-          who care. His governing motto is essentially that employees should
-          wake up in the morning happy to go to work; if that isn’t the case, he
-          wants you to be honest about that with management. He also wants Zoom
-          partners to win....
+          <?php echo $aboutme?>
         </p>
 
         <h3>Previous Projects</h3>
