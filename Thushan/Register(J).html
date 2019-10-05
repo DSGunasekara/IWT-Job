@@ -46,7 +46,7 @@
       <div class="column middle">
         <form
           width="100%"
-          name="regForm"
+          action="../php/seekerReg.php"
           onsubmit="return validateForm()"
           method="post"
         >
@@ -55,12 +55,12 @@
 
             <hr />
 
-            <label for="FullNamee"><b>Your Full Name</b></label>
+            <label for="FullName"><b>Your Full Name</b></label>
             <input
+              id="Fname"
               type="text"
-              id="usrname"
-              placeholder="Full Name"
               name="Fname"
+              placeholder="Full name"
               required
             />
 
@@ -76,28 +76,54 @@
             <label for="psw"><b>Password</b></label>
             <input
               type="password"
-              id="passw"
+              id="password"
               placeholder="Enter Password"
-              name="psw"
+              name="password"
               required
             />
 
             <label for="psw-repeat"><b>Repeat Password</b></label>
             <input
               type="password"
-              id="repasswd"
+              id="repassword"
               placeholder="Repeat Password"
-              name="psw-repeat"
+              name="repassword"
+              required
+            />
+            <label for="job-type"><b>Job Type</b></label>
+            <input
+              type="text"
+              id="jobtype"
+              placeholder="like web developer.."
+              name="jobtype"
+              required
+            />
+            <label for="experties"><b>Experties</b></label>
+            <input
+              type="text"
+              id="experties"
+              placeholder="Like html, php.."
+              name="experties"
+              required
+            />
+            <label for="experience"><b>Experience</b></label>
+            <input
+              type="text"
+              id="experience"
+              placeholder="Repeat Password"
+              name="experience"
+              required
+            />
+            <label for="about"><b>About</b></label>
+            <input
+              type="text"
+              id="about"
+              placeholder="About"
+              name="about"
               required
             />
 
-            <input type="file" id="real-file" hidden="hidden" />
-            <button type="button" id="custom-button" onclick="loadData()">
-              Add CV
-            </button>
-            <span id="custom-text">No file chose</span>
-
-            <button type="submit" class="registerbtn">REGISTER</button>
+            <input type="submit" name="register" class="registerbtn" />
 
             <hr />
           </div>
