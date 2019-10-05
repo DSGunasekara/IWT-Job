@@ -36,8 +36,8 @@
       <a href="../contact.html">Contact us</a>
       <a href="../about.html">About us</a>
       <!-- <a id="signup" href="../signup.html">Signup</a> -->
-      <a id="login" href="../Thushan/Login.html">Login</a>
-      <a id="profile" href="../Umesh/profile.html">Profile</a>
+      <a id="login" href="../Thushan/Login.php">Login</a>
+      <a id="profile" href="../Umesh/profile.php">Profile</a>
       <a href="javascript:void(0);" class="icon" onclick="mobNav()">
         <i class="fa fa-bars"></i>
       </a>
