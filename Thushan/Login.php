@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -47,30 +50,32 @@
       <div class="column side"></div>
 
       <div class="column middle">
-        <form width="100%">
+        <form width="100%" action="../php/loginpage.php" method="post">
           <div class="container">
             <br /><br />
             <h1>Log in</h1>
 
             <hr />
+              <label for="email"><b>Email Address</b></label>
+              <input
+                type="text"
+                placeholder="Enter Email Address"
+                name="email"
+                required
+              />
 
-            <label for="email"><b>Email Address</b></label>
-            <input
-              type="text"
-              placeholder="Enter Email Address"
-              name="email"
-              required
-            />
+              <label for="psw"><b>Password</b></label>
+              <input
+                type="password"
+                placeholder="Enter Password"
+                name="password"
+                required
+              />
 
-            <label for="psw"><b>Password</b></label>
-            <input
-              type="password"
-              placeholder="Enter Password"
-              name="psw"
-              required
-            />
-
-            <button type="LOGIN" class="registerbtn">LOGIN</button>
+              <input type="submit" class="registerbtn">
+                <!-- LOGIN -->
+              </button>
+            
             <p><a href="#">Forgot your password?</a></p>
             <hr />
             <p>
@@ -91,6 +96,6 @@
       <h4>This is a project of SLIIT students</h4>
     </footer>
   </body>
-  <script src="../src/script.js"></script>
   <script src="js.js"></script>
+  <script src="../src/script.js"></script>
 </html>
