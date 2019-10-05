@@ -1,6 +1,3 @@
-<?php
-  session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -58,6 +55,7 @@
             <hr />
               <label for="email"><b>Email Address</b></label>
               <input
+                id="email"
                 type="text"
                 placeholder="Enter Email Address"
                 name="email"
@@ -66,15 +64,17 @@
 
               <label for="psw"><b>Password</b></label>
               <input
+                id = "password"
                 type="password"
                 placeholder="Enter Password"
                 name="password"
                 required
               />
 
-              <input type="submit" class="registerbtn">
-                <!-- LOGIN -->
+              <input name = "login"type="submit" class="registerbtn">
+                
               </button>
+              
             
             <p><a href="#">Forgot your password?</a></p>
             <hr />

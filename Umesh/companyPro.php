@@ -1,3 +1,27 @@
+<?php
+  session_start();
+  if(isset($_SESSION['company_id'])){
+    include_once '../php/dbcon.php';
+    $seeker = $_SESSION['company_id'];
+
+    $sql = "SELECT * FROM company where company_id = $seeker;";
+    $result = mysqli_query($conn, $sql);
+    $resultCheck = mysqli_num_rows($result);
+
+    if ($resultCheck > 0) {
+      while ($row = mysqli_fetch_assoc($result)) {
+        // $job_seeker_id = $row['job_seeker_id'];
+        $name = $row['company_name'];
+        $email = $row['email'];
+        $phone = $row['phone'];
+        $aboutme = $row['about'];
+      }
+    }
+  }else{
+    header("Location: ../Thushan/login.php");
+  }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -45,24 +69,19 @@
 
       <div class="column middle">
         <img src="../src/Virtusa.jpg" style="width:50%" />
-        <h2 style="text-align: left">Virtusa</h2>
+        <h2 style="text-align: left">Name: <?php echo $name?></h2>
 
-        <p class="title">Malabe</p>
-        <p class="title">66/3,Kahanthota road,Malabe</p>
-        <p class="title">computerlogo@gmail.com</p>
-        <p class="title">011-5684759</p>
+        
+        <p class="title">Contact us 
+        <p class="title">Email: <?php echo $email?></p>
+        <p class="title">Tel Phone:<?php echo $phone?></p>
         <p class="title">About</p>
         <p>
-          If you get an offer to work at Zoom, take it. Zoom takes employee
-          happiness seriously and people genuinely love the company. Eric Yuan
-          is leaps and bounds beyond his peers when it comes to CEOs who care.
-          His governing motto is essentially that employees should wake up in
-          the morning happy to go to work; if that isn’t the case, he wants you
-          to be honest about that with management. He also wants Zoom partners
-          to win....
+          <?php echo $aboutme?>
+          <?php echo $aboutme?>
         </p>
 
-        <p><a class="view-more" href="../jobs.html">My Posted Jobs</a></p>
+        <!-- <p><a class="view-more" href="../jobs.html">My Posted Jobs</a></p> -->
       </div>
 
       <div class="column side"></div>
