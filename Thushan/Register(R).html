@@ -48,6 +48,7 @@
         <form
           width="100%"
           name="regForm"
+          action="../php/companyReg.php"
           onsubmit="return validateForm()"
           method="post"
         >
@@ -60,26 +61,16 @@
             <input
               type="text"
               placeholder="Organization"
-              name="oname"
+              name="name"
               required
             />
-
-            <input type="file" id="real-file" hidden="hidden" />
-            <button type="button" id="custom-button" onclick="loadData()">
-              Chose Logo
-            </button>
-            <span id="custom-text">No file chose</span>
-            <br />
-
-            <label><b>Your Full Name</b></label>
-            <input type="text" placeholder="Full Name" name="fname" required />
 
             <label><b>Phone Number</b></label>
             <input
               type="text"
               id="phoneNo"
               placeholder="Phone Number"
-              name="phn"
+              name="phone"
               required
             />
 
@@ -90,26 +81,28 @@
               name="email"
               required
             />
+            <label><b>About</b></label>
+            <input type="text" placeholder="About" name="about" required />
 
             <label><b>Password</b></label>
             <input
               type="password"
-              id="passw"
+              id="password"
               placeholder="Enter Password"
-              name="psw"
+              name="password"
               required
             />
 
             <label><b>Repeat Password</b></label>
             <input
               type="password"
-              id="repasswd"
+              id="repassword"
               placeholder="Repeat Password"
-              name="psw-repeat"
+              name="repassword"
               required
             />
 
-            <button type="Submit" class="registerbtn">REGISTER</button>
+            <input type="Submit" name="register" class="registerbtn" />
 
             <hr />
           </div>
