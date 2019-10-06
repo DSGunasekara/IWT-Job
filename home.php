@@ -1,5 +1,6 @@
 <?php
-include_once './php/dbcon.php'
+include_once './php/dbcon.php';
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -24,13 +25,19 @@ include_once './php/dbcon.php'
   <div class="topnav" id="myTopNav">
     <a href="home.php">Home</a>
     <a href="categories.php">Categories</a>
-    <a href="Ashini/Postajob.html">Post a job</a>
+    <a href="Ashini/Postajob.php">Post a job</a>
     <a href="applicants.php">Applicants</a>
     <a href="jobs.php">Jobs</a>
     <a href="contact.html">Contact us</a>
     <a href="about.html">About us</a>
     <!-- <a id="signup" href="signup.html">Signup</a> -->
-    <a id="login" href="Thushan\Login.php">Login</a>
+    <?php if(isset($_SESSION['company_id'])): ?>
+      <a class="link" id="login" href="php/logout.php" style="text-decoration:none">logout</a>
+    <?php else: ?>
+      <a class="link" id="login" href="Thushan\Login.php" style="text-decoration:none">login</a>
+    <?php endif; ?>
+
+    <!-- <a id="login" href="Thushan\Login.php">Login</a> -->
     <a id="profile" href="Umesh\profile.php">Profile</a>
     <a href="javascript:void(0);" class="icon" onclick="mobNav()">
       <i class="fa fa-bars"></i>

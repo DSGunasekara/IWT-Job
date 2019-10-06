@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['job_seeker_id'])){
+if(!isset($_SESSION['job_seeker_id']) || !isset($_SESSION['company_id']){
     header("Location: ../Thushan/Login.php");
 }
 ?>

@@ -1,3 +1,13 @@
+<?php
+  session_start();
+  if(isset($_SESSION['company_id'])){
+    include_once '../php/dbcon.php';
+    $seeker = $_SESSION['company_id'];
+  }else{
+    header("Location: ../Thushan/login.php");
+  }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,7 +38,7 @@
     <div class="topnav" id="myTopNav">
       <a href="../home.php">Home</a>
       <a href="../categories.php">Categories</a>
-      <a href="Ashini/Postajob.html">Post a job</a>
+      <a href="Ashini/Postajob.php">Post a job</a>
       <a href="../applicants.php">Applicants</a>
       <a href="../jobs.php">Jobs</a>
       <a href="../contact.html">Contact us</a>
