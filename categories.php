@@ -1,3 +1,7 @@
+<?php
+include_once './php/dbcon.php';
+session_start()
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,14 +28,29 @@
     <div class="topnav" id="myTopNav">
       <a href="home.php">Home</a>
       <a href="categories.php">Categories</a>
+      
+      <?php if(isset($_SESSION['company_id'])): ?>
       <a href="Ashini/Postajob.php">Post a job</a>
+    <?php else: ?>
+    <?php endif; ?>
+
       <a href="applicants.php">Applicants</a>
       <a href="jobs.php">Jobs</a>
-      <a href="contact.html">Contact us</a>
-      <a href="about.html">About us</a>
-      <!-- <a id="signup" href="signup.html">Signup</a> -->
-      <a id="login" href="Thushan\Login.php">Login</a>
-      <a id="profile" href="Umesh\profile.php">Profile</a>
+      <a href="contact.php">Contact us</a>
+      <a href="about.php">About us</a>
+     
+      <?php if(isset($_SESSION['company_id']) || isset($_SESSION['job_seeker_id'])): ?>
+      <a class="link" id="login" href="php/logout.php" style="text-decoration:none">logout</a>
+    <?php else: ?>
+      <a class="link" id="login" href="Thushan\Login.php" style="text-decoration:none">login</a>
+    <?php endif; ?>
+
+    <?php if(isset($_SESSION['company_id'])): ?>
+      <a id="profile" href="Umesh/companyPro.php">Profile</a>
+    <?php elseif(isset($_SESSION['job_seeker_id'])): ?>
+    <a id="profile" href="Umesh/profile.php">Profile</a>
+    <?php endif; ?>
+
       <a href="javascript:void(0);" class="icon" onclick="mobNav()">
         <i class="fa fa-bars"></i>
       </a>
